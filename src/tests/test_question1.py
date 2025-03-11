@@ -1,6 +1,7 @@
 import unittest
 
-from src.question1 import Contract, Contracts
+from exceptions import BusinessRuleError, InvalidContractError
+from questions import Contract, Contracts
 
 
 class TestContracts(unittest.TestCase):
@@ -32,3 +33,15 @@ class TestContracts(unittest.TestCase):
         self.assertEqual(
             Contracts().get_top_N_open_contracts([Contract(1, 100)], [1], 0), []
         )
+
+    def test_invalid_contract_id(self):
+        with self.assertRaises(InvalidContractError):
+            Contract("abc", 100)  # ID não é inteiro
+
+    def test_negative_debt(self):
+        with self.assertRaises(BusinessRuleError):
+            Contract(1, -50)  # Dívida negativa
+
+    def test_top_n_negative(self):
+        with self.assertRaises(InvalidContractError):
+            Contracts().get_top_N_open_contracts([Contract(1, 100)], [], -1)

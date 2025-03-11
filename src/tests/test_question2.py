@@ -1,6 +1,7 @@
 import unittest
 
-from src.question2 import Orders
+from exceptions import BusinessRuleError, InvalidOrderError
+from questions import Orders
 
 
 class TestOrders(unittest.TestCase):
@@ -21,3 +22,11 @@ class TestOrders(unittest.TestCase):
 
     def test_all_requests_same(self):
         self.assertEqual(Orders().combine_orders([50, 50, 50], 100), 2)
+
+    def test_requests_not_list(self):
+        with self.assertRaises(InvalidOrderError):
+            Orders().combine_orders("not_a_list", 100)
+
+    def test_request_exceeds_n_max(self):
+        with self.assertRaises(BusinessRuleError):
+            Orders().combine_orders([150], 100)  # Requisição maior que n_max

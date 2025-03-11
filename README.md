@@ -53,6 +53,13 @@ print(result)  # Output: 2
 
 ---
 
+## Exceções Personalizadas  
+- **InvalidContractError:** Para erros de tipo ou formato em contratos.  
+- **InvalidOrderError:** Para erros de tipo ou formato em requisições de pedidos.  
+- **BusinessRuleError:** Para violações de regras de negócio (ex.: débito negativo).
+
+---
+
 ## Como Executar os Testes Unitários  
 **Pré-requisitos:**  
 - Python 3.8+ instalado.  
@@ -60,7 +67,8 @@ print(result)  # Output: 2
 **Passo a Passo:**  
 1. **Execute os testes:**  
    ```bash
-   python -m unittest discover tests
+   cd src
+   python -m unittest
    ```  
 
 ---
