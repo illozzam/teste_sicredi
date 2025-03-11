@@ -1,6 +1,6 @@
 ## Visão Geral  
 Este projeto contém soluções para dois desafios técnicos propostos pelo Sicredi, seguindo boas práticas de código limpo, documentação e testes unitários.  
-A estrutura do projeto está organizada em `src/` (código principal) e `tests/` (testes unitários).
+A estrutura do projeto está organizada em `src/` (código principal), contendo os códigos referentes às questões, exceções e testes unitários.
 
 ---
 
@@ -10,11 +10,11 @@ Retornar os `N` maiores devedores que ainda não renegociaram seus contratos.
 
 ### **Abordagem**  
 1. **Filtragem Eficiente:**  
-   - Usamos um `set` para verificar contratos renegociados em **O(1)**.  
+   - Utilizado um `set` para verificar contratos renegociados em **O(1)**.  
 2. **Ordenação Decrescente:**  
-   - Ordenamos os contratos pelo saldo devedor para garantir priorização correta.  
+   - Ordenados os contratos pelo saldo devedor para garantir priorização correta.  
 3. **Validação de Entrada:**  
-   - Tratamos casos onde `top_n` é maior que a lista filtrada ou ≤ 0.  
+   - Tratados casos onde `top_n` é maior que a lista filtrada ou ≤ 0.  
 
 ### **Exemplo de Uso**  
 ```python
@@ -38,7 +38,7 @@ Calcular o número mínimo de viagens para atender requisições de agências, c
 
 ### **Abordagem**  
 1. **Algoritmo Two Pointers:**  
-   - Ordenamos as requisições em ordem decrescente e usamos dois ponteiros para combinar a maior e a menor requisição disponíveis.  
+   - Ordernadas as requisições em ordem decrescente e usamos dois ponteiros para combinar a maior e a menor requisição disponíveis.  
 2. **Complexidade O(n log n):**  
    - A ordenação domina a complexidade, garantindo eficiência mesmo para grandes listas.  
 
